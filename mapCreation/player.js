@@ -66,7 +66,6 @@ class Player {
     );
     this.mesh = result.meshes[0];
     this.mesh.name = "knight";
-    // Ajustez cette rotation pour que le joueur soit orienté de côté
     this.mesh.rotationQuaternion = Quaternion.FromEulerAngles(
       0,
       Math.PI / 2,
@@ -285,9 +284,6 @@ class Player {
       this.canFire = true;
     }, this.fireRate);
 
-    // Assurez-vous d'avoir chargé un son dans votre GlobalManager ou similaire
-    // GlobalManager.assets.cannonSound.setPosition(this.mesh.position);
-    //GlobalManager.assets.cannonSound.play();
 
     const projectile = MeshBuilder.CreateSphere(
       "projectile",
@@ -310,7 +306,7 @@ class Player {
 
     // Ajout d'un petit azimuth pour simuler un tir en arc
     const azimuth = 0.1;
-    const powerOfFire = 100; // Ajustez selon la puissance désirée
+    const powerOfFire = 100;
     const aimForceVector = this.getForwardVector(this.mesh)
       .multiplyByFloats(powerOfFire, powerOfFire, powerOfFire)
       .add(new Vector3(0, azimuth * powerOfFire, 0));
@@ -320,7 +316,7 @@ class Player {
       projectile.getAbsolutePosition()
     );
 
-    // Gestion des collisions spécifiques, interaction avec d'autres objets, etc., peut être ajoutée ici
+    // Gestion des collisions spécifiques, interaction avec d'autres objets vont etre ajouter ici 
 
     setTimeout(() => {
       projectile.dispose();
