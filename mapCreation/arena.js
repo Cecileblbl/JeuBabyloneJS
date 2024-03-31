@@ -109,7 +109,7 @@ class Arena {
               { height: 0.1, width: 1, depth: 1 },
               GlobalManager.scene
             );
-            platform.position.set(x, 0.25, y); // Ajustez la position verticale selon vos besoins
+            platform.position.set(x, 0.25, y); 
             let platformMaterial = new StandardMaterial(
               "platformMaterial",
               GlobalManager.scene
